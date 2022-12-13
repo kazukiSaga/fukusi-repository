@@ -4,7 +4,6 @@ class DeviseCreateStaffmembers < ActiveRecord::Migration[6.1]
   def change
     create_table :staffmembers do |t|
       ## Database authenticatable
-      t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
 
       ## Recoverable
@@ -35,9 +34,8 @@ class DeviseCreateStaffmembers < ActiveRecord::Migration[6.1]
       t.string :name
       t.timestamps null: false
     end
-
-    add_index :staffmembers, :email,                unique: true
     add_index :staffmembers, :reset_password_token, unique: true
+
     # add_index :staffmembers, :confirmation_token,   unique: true
     # add_index :staffmembers, :unlock_token,         unique: true
   end
