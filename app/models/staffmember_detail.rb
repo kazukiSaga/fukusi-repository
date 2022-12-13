@@ -1,0 +1,2 @@
+class StaffmemberDetail < ApplicationRecord
+end
