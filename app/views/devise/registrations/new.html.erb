@@ -21,11 +21,6 @@
         </div>
 
         <div class="field">
-          <%= f.label :email, class: "label" %>
-          <%= f.email_field :email, autocomplete: "name", :placeholder => "email", class: "input" %>
-        </div>
-
-        <div class="field">
           <%= f.label :password, class: "label" %>
           <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> characters minimum)</em>

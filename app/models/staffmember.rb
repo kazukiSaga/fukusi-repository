@@ -3,6 +3,8 @@ class Staffmember < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  
+  has_one :staffmember_detail
 
   # メソッドのオーバーライド
   def email_required? 
