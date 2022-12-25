@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2022_12_13_141959) do
   create_table "staffmember_details", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "staffmember_id"
     t.string "position"
-    t.string "sex"
+    t.integer "sex"
     t.date "birth_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

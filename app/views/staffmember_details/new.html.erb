@@ -1,0 +1,28 @@
+<h1>StaffmemberDetails#new</h1>
+<p>Find me in app/views/staffmember_details/new.html.erb</p>
+
+    <%= form_with model: @staffmember_detail do |f| %>
+ 
+        <div class="field">
+          <%= f.label :position, "役職" %><br>
+          <%= f.text_field :position %>          
+        </div>
+
+        <div class="sex-field">
+          <%= f.label :Sex, "性別" %><br />
+          <%= f.label :man  %>
+          <%= f.radio_button :sex, :man %>
+          <%= f.label :woman  %>
+          <%= f.radio_button :sex, :woman %>
+        </div>
+
+        <div class="field">
+          <%= f.label :birth_date, "生年月日" %><br>
+          <%= f.date_select :birth_date, {start_year: 1900, end_year: Time.now.year,include_blank: true, use_two_digit_numbers: true},{class: "input-tab birth_date-select"}%>          
+        </div>
+
+        <div class="actions">
+          <%= f.submit "新規登録", class: "button is-success" %>
+        </div>
+    <% end %>
+
