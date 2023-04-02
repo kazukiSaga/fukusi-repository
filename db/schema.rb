@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2022_12_25_093000) do
 
-  create_table "staffmember_details", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "staffmember_details", force: :cascade do |t|
     t.integer "staffmember_id"
     t.string "position"
     t.integer "sex"
@@ -21,7 +24,7 @@ ActiveRecord::Schema.define(version: 2022_12_25_093000) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "staffmembers", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "staffmembers", force: :cascade do |t|
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -32,7 +35,7 @@ ActiveRecord::Schema.define(version: 2022_12_25_093000) do
     t.index ["reset_password_token"], name: "index_staffmembers_on_reset_password_token", unique: true
   end
 
-  create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

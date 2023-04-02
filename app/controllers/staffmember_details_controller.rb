@@ -7,9 +7,13 @@ class StaffmemberDetailsController < ApplicationController
 
   def create
     @staffmember_detail = StaffmemberDetail.new(staffmember_detail_params)
-    if @staffmember_detail.save
+    @staffmember_detail.staffmember = current_staffmember 
+    if @staffmember_detail.save!
+       flash[:success] = 'データを保存しました'
        redirect_to root_path
-    else render :new
+    else 
+       flash.now[:alert] = 'データの保存に失敗しました'
+       render :new
     end
   end
 
